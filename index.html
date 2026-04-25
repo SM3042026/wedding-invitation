@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دعوة زفاف محمد وسحر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8f3ee;
+      --surface: #fffdfa;
+      --text: #4c4037;
+      --muted: #7f6f62;
+      --gold: #c9a96a;
+      --gold-dark: #b18e4c;
+      --line: #eadfce;
+      --shadow: 0 14px 35px rgba(100, 78, 52, 0.12);
+      --radius: 20px;
+      --container: min(1100px, 92vw);
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top right, #fff7ee 0%, var(--bg) 55%);
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      filter: blur(2px);
+      opacity: 0.18;
+      background: radial-gradient(circle, rgba(201,169,106,.5) 0%, transparent 70%);
+    }
+
+    body::before { top: -80px; right: -80px; }
+    body::after { bottom: -120px; left: -90px; }
+
+    .section {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: #3a3028;
+      text-align: center;
+      letter-spacing: .3px;
+    }
+
+    .section-subtitle {
+      margin: 0 auto 34px;
+      text-align: center;
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1.02rem;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(40,26,16,.38), rgba(40,26,16,.62)),
+        url("WhatsApp Image 2026-04-25 at 4.44.36 PM.jpeg") center/cover no-repeat;
+      transform: scale(1.03);
+      animation: heroZoom 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.03); }
+      to { transform: scale(1.1); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(95vw, 900px);
+      padding: 30px 18px;
+    }
+
+    .eyebrow {
+      font-size: .95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: .9;
+      margin-bottom: 8px;
+    }
+
+    .names {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.9rem, 9vw, 6.2rem);
+      margin: 0;
+      line-height: 1.1;
+      color: #fff4de;
+      text-shadow: 0 8px 22px rgba(0,0,0,.35);
+    }
+
+    .hero h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(1.3rem, 3.6vw, 2rem);
+      font-weight: 600;
+    }
+
+    .hero-date {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 999px;
+      backdrop-filter: blur(3px);
+      background: rgba(255,255,255,.08);
+      margin-bottom: 22px;
+      font-size: .95rem;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(65px, 105px));
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .time-box {
+      border-radius: 14px;
+      padding: 10px 8px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.3);
+      backdrop-filter: blur(4px);
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: clamp(1.1rem, 4vw, 1.8rem);
+      line-height: 1.15;
+      margin-bottom: 3px;
+    }
+
+    .time-box span {
+      font-size: .78rem;
+      opacity: .95;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 4vw, 34px);
+    }
+
+    .story-text {
+      font-size: 1.08rem;
+      color: #5a4b3e;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .story-text strong {
+      color: #3d3128;
+      font-weight: 700;
+    }
+
+    .details-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 14px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #efe5d6;
+    }
+
+    .detail-item b {
+      color: #33291f;
+      font-size: 1.02rem;
+    }
+
+    .map-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #eadfce;
+      box-shadow: 0 8px 22px rgba(88, 68, 43, 0.12);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      aspect-ratio: 4 / 3;
+      border: 1px solid #eadfce;
+      box-shadow: 0 7px 20px rgba(77, 57, 37, .14);
+      isolation: isolate;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s ease, filter .4s ease;
+    }
+
+    .gallery-item::after {
+      content: 'لحظة من الحُب';
+      position: absolute;
+      inset: auto 10px 10px auto;
+      padding: 6px 10px;
+      font-size: .82rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.76);
+      color: #4f3e2f;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+      filter: saturate(1.06) brightness(1.03);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rsvp-form {
+      display: grid;
+      gap: 14px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #4d3f33;
+      font-size: .95rem;
+    }
+
+    input, select {
+      width: 100%;
+      border: 1px solid #dbc9b3;
+      border-radius: 12px;
+      background: #fff;
+      padding: 12px 14px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--gold-dark);
+      box-shadow: 0 0 0 3px rgba(201,169,106,.18);
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold) 0%, #d8bf88 100%);
+      color: #fff;
+      padding: 12px 24px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(160, 121, 52, .28);
+      transition: transform .2s ease, filter .25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.03); }
+
+    .form-note {
+      text-align: center;
+      color: #756452;
+      font-size: .9rem;
+      margin: 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 26px 16px 40px;
+      color: #5d4b3c;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .floating-map-btn {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 20;
+      background: #ffffff;
+      color: #5b452e;
+      border: 1px solid #e6d5bd;
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(77,57,37,.2);
+      padding: 11px 15px;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .2s ease, background .25s ease;
+    }
+
+    .floating-map-btn:hover {
+      transform: translateY(-2px);
+      background: #fff9f0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 700px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .details-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-item.tall {
+        grid-row: span 2;
+        aspect-ratio: 4 / 5;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="hero-content reveal show">
+      <div class="eyebrow">دعوة زفاف</div>
+      <h1 class="names">Mohamed &amp; Sahar</h1>
+      <h2>نحتفل ببداية حكايتنا الأجمل</h2>
+      <div class="hero-date">الخميس 30 أبريل 2026</div>
+      <div class="countdown" id="countdown">
+        <div class="time-box"><strong id="days">00</strong><span>يوم</span></div>
+        <div class="time-box"><strong id="hours">00</strong><span>ساعة</span></div>
+        <div class="time-box"><strong id="minutes">00</strong><span>دقيقة</span></div>
+        <div class="time-box"><strong id="seconds">00</strong><span>ثانية</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section reveal" id="story">
+      <div class="card">
+        <h3 class="section-title">قصتنا</h3>
+        <p class="section-subtitle">من أول لقاء... حتى وعد العمر.</p>
+        <p class="story-text">
+          بدأت القصة بلقاء بسيط، ثم تحول مع الوقت إلى حبٍ حقيقي مليء بالدفء والطمأنينة.
+          في <strong>18 أكتوبر 2024</strong> أعلنا خطوبتهما وسط فرحة الأهل والأحباب،
+          واليوم يستعد <strong>محمد وسحر</strong> لبدء فصل جديد من الحياة، عنوانه المودة، الرحمة،
+          و<strong>الـ Forever</strong> الذي لطالما حلما به معًا.
+        </p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="details">
+      <h3 class="section-title">تفاصيل الحفل</h3>
+      <p class="section-subtitle">يشرفنا حضوركم ومشاركتكم هذه الليلة المميزة.</p>
+      <div class="details-wrap">
+        <div class="card">
+          <ul class="detail-list">
+            <li class="detail-item"><span>📅 التاريخ</span><b>30 أبريل 2026</b></li>
+            <li class="detail-item"><span>⏰ الوقت</span><b>6:00 مساءً - 10:00 مساءً</b></li>
+            <li class="detail-item"><span>📍 المكان</span><b>قاعة جاردينيا - ألماظة</b></li>
+          </ul>
+        </div>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2276.312665227678!2d30.465408640818158!3d31.06113292120423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f66b1a966f1c01%3A0x366b24a5770e9da!2z2YXYrNmF2Lkg2YLYp9i52KfYqiDYp9mE2YXYp9i42Kk!5e1!3m2!1sen!2seg!4v1777127740316!5m2!1sen!2seg" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="gallery">
+      <h3 class="section-title">لحظاتنا</h3>
+      <p class="section-subtitle">مجموعة صور مميزة من رحلتنا معًا.</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item tall"><img src="WhatsApp Image 2026-04-25 at 4.44.36 PM.jpeg" alt="صورة رومانسية 1" /></figure>
+        <figure class="gallery-item"><img src="WhatsApp Image 2026-04-25 at 4.45.54 PM.jpeg" alt="صورة رومانسية 2" /></figure>
+        <figure class="gallery-item"><img src="WhatsApp Image 2026-04-25 at 4.45.55 PM.jpeg" alt="صورة رومانسية 3" /></figure>
+        <figure class="gallery-item"><img src="WhatsApp Image 2026-04-25 at 5.27.22 PM.jpeg" alt="صورة رومانسية 4" /></figure>
+        <figure class="gallery-item"><img src="WhatsApp Image 2026-04-25 at 5.27.22 PM (1).jpeg" alt="صورة رومانسية 5" /></figure>
+      </div>
+    </section>
+
+    <section class="section reveal" id="rsvp">
+      <div class="card">
+        <h3 class="section-title">تأكيد الحضور</h3>
+        <p class="section-subtitle">يسعدنا تأكيد حضوركم من خلال النموذج التالي.</p>
+        <form class="rsvp-form" onsubmit="event.preventDefault(); alert('شكرًا لك! تم تسجيل تأكيدك بشكل مبدئي.');">
+          <div class="field">
+            <label for="name">الاسم</label>
+            <input type="text" id="name" name="name" placeholder="اكتب اسمك" required />
+          </div>
+          <div class="field">
+            <label for="attend">هل ستحضر؟</label>
+            <select id="attend" name="attend" required>
+              <option value="" selected disabled>اختر الإجابة</option>
+              <option value="yes">نعم، سأحضر</option>
+              <option value="no">للأسف، لن أتمكن من الحضور</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="guests">عدد المرافقين</label>
+            <input type="number" id="guests" name="guests" min="0" max="10" value="1" />
+          </div>
+          <button class="btn" type="submit">إرسال التأكيد</button>
+          <p class="form-note">لا يوجد ربط بقاعدة بيانات حاليًا — هذا النموذج للعرض فقط.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    We can’t wait to celebrate with you ❤️<br />
+    في انتظاركم لنصنع أجمل الذكريات معًا.
+  </footer>
+
+  <a class="floating-map-btn" href="https://maps.google.com/?q=Gardenia+Hall+Almaza" target="_blank" rel="noopener noreferrer" aria-label="افتح الموقع على خرائط جوجل">
+    🗺️ افتح الموقع
+  </a>
+
+  <script>
+    const weddingDate = new Date('2026-04-30T18:00:00');
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal:not(.hero-content)').forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
